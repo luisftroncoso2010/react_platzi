@@ -3,6 +3,7 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
+import React from 'react';
 
 
 const defaulTodos = [
@@ -15,10 +16,28 @@ const defaulTodos = [
 
 
 function App() {
+  const [todos] = React
+    .useState(defaulTodos);
+  const [searchValue, setSearchValue] = React
+    .useState('');  // Se cola un string vacio
+
+  const completedTodos = todos.filter(
+    todo => !!todo.completed).length;
+
+  const totalTodos = todos.length;    
+
+  // Mostramos el cambio de estado
+  console.log("Los usuarios buscan todos de " + searchValue);
   return (
     <>   
-      <TodoCounter completed={16} total={25} />
-      <TodoSearch />
+      <TodoCounter
+       completed={completedTodos}
+       total={totalTodos}
+        />
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <TodoList>
         {defaulTodos.map(todo => (
         <TodoItem
