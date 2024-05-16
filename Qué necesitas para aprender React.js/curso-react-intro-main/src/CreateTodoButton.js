@@ -1,5 +1,3 @@
-/*Importamos el archivo para darles los colores al botos */
-
 import './CreateTodoButton.css';
 function CreateTodoButton() {
     return(     

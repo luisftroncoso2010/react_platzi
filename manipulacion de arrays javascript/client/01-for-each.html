@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=l, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"> </div>
+    <div id="appDos">Tareas: </div>
+    <script>
+        const products = [
+            { title: 'Burguer', price: 123 },
+            { title: 'Pizza', price: 20 }
+        ]
+        // Añada en el index el elemento HTML
+        const app = document.getElementById('app');
+        products.forEach(products => {
+            app.innerHTML += `<li>${products.title} - ${products.price}</li>`
+        })
+
+        const tareas  = [
+            {nombre: 'Comprar cebolla', completada: false},
+            {nombre: 'Tarea JavaScript', completada: true},
+            {nombre: 'Tarea Java', completada: false},
+        ]
+
+        const appDos = document.getElementById('appDos');
+        tareas.forEach(tareas => {
+            appDos.innerHTML += `<li>${tareas.nombre} - Completada: ${tareas.completada}</li>`
+        })
+    </script>
+</body>
+</html>

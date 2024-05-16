@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Map</title>
+</head>
+<body>
+    <div id="app"> </div>
+    <div id="appDos">Tareas: </div>
+    <script>
+        const products = [
+            { title: 'Burguer', price: 123 },
+            { title: 'Pizza', price: 20 }
+        ]
+        // Añada en el index el elemento HTML
+        const app = document.getElementById('app');
+        products.forEach(products => {
+            app.innerHTML += `<li>${products.title} - ${products.price}</li>`
+        })
+
+        const tareas  = [
+            {nombre: 'Comprar cebolla', completada: false},
+            {nombre: 'Tarea JavaScript', completada: true},
+            {nombre: 'Tarea Java', completada: false},
+        ]
+
+        const appDos = document.getElementById('appDos');
+        // Esto cre un array nuevo
+        const listaTarea = tareas.map(tareas => {
+            return `<li>${tareas.nombre} - Completada: ${tareas.completada}</li>`
+        })
+
+        // Y el inner necesota un strin y con el join unimos el array
+        appDos.innerHTML = listaTarea.join('')
+
+    </script>
+    
+</body>
+</html>
