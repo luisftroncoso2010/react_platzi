@@ -13,24 +13,36 @@ import React from 'react';
 //   {text: 'Curso de Introduccion a React.js', completed: false}
 // ];
 
-
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaulTodos))
 // localStorage.removeItem('TODO_v1')
 
-function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1')
+function useLocalStorage(itemName, initialValue){    
+
+  const localStorageItem = localStorage.getItem(itemName)
   
-  let parsedTodos
+  let parsedItem
 
-  if(!localStorageTodos){
-    localStorage.setItem('TODOS_V1', JSON.stringify([]) )
-    parsedTodos = []
+  if(!localStorageItem){
+    localStorage.setItem(itemName, JSON.stringify(initialValue) )
+    parsedItem = initialValue
   } else {
-    parsedTodos = JSON.parse(localStorageTodos)
-  }   
+    parsedItem = JSON.parse(localStorageItem)
+  }
+  
+  const [item, setItem] =  React.useState(parsedItem)
+  
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem))
+    setItem(newItem)
+  }
 
+  return [item, saveItem]
+}
+
+
+function App() {  
   // Hoks
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');  // Se cola un string vacio
 
   const completedTodos = todos.filter(
@@ -46,10 +58,7 @@ function App() {
     } 
   )
 
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
-    setTodos(newTodos)
-  }
+ 
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
@@ -94,4 +103,4 @@ function App() {
     </>
   );
 }
-export default App;
+export default  App 
