@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas</title>
+</head>
+<body>
+    <div id="div-padre">
+        <h1>JavaScript</h1>
+        <p >This text</p>
+        /*Hola Luis*/
+        <a >Luis</a>
+        <h5>¿Como vas?</h5>
+    </div>
+    <script>
+        const div = document.querySelector('#div-padre p')
+        const newSiblingElement = div.nextElementSibling
+        console.log(newSiblingElement);
+        console.log('- Incluyendo texto y comentario: ', div.nextSibling);
+        console.log(document);
+    </script>
+    
+</body>
+</html>
