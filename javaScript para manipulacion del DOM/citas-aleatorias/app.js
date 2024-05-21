@@ -12,9 +12,5 @@ function cambiarCita(){
     citaElem.innerText = `"${citas[indiceAleatorio].texto}"`
     autorElem.innerText = citas[indiceAleatorio].autor
 }
-
-
-
-
 cambiarCita()
 botonElemento.addEventListener('click', cambiarCita)
