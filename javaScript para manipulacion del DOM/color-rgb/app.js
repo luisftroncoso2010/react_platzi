@@ -32,7 +32,7 @@ inputRojo.addEventListener('change', (e) => {
 inputVerde.addEventListener('change', (e) => {
     verde = e.target.value
     textoVerde.innerText = verde
-    actualizarColor(rojo, verde, azul)
+    actualizarColor(rojo, verde, azul) 
 })
 
 // Para actulizar el Green (Verde)
