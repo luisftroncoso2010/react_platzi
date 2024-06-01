@@ -31,17 +31,37 @@ console.log(autoNuevo)
 console.log(autoNuevoDos)
 console.log(autoNuevotres)
 
-console.log('   * Ejemplo de 5 autos diferentes')
-let autosNuevos = []
+// console.log('   * Ejemplo de 5 autos diferentes')
+// let autosNuevos = []
 
-for (let i = 0; i < 5; i++) {
-    var marca = prompt('Ingre marca: ')
-    var modelo = prompt('Ingresa modelo: ')
-    var annio = prompt('Ingresa modelo: ')
+// for (let i = 0; i < 5; i++) {
+//     var marca = prompt('Ingre marca: ')
+//     var modelo = prompt('Ingresa modelo: ')
+//     var annio = prompt('Ingresa modelo: ')
 
-    autosNuevos.push(new Auto(marca, modelo, annio))       
+//     autosNuevos.push(new Auto(marca, modelo, annio))       
+// }
+
+// for (let i = 0; i < autosNuevos.length; i++) {
+//     console.log(autosNuevos[i])    
+// }
+
+console.log('   * Practica creando objetos: ')
+
+var auto = {
+    marca: 'Toyota',
+    modelo: 'Corolla',
+    licensePlate: 'xv2025'    
 }
 
-for (let i = 0; i < autosNuevos.length; i++) {
-    console.log(autosNuevos[i])    
+function solution(car) {
+    if(car.licensePlate === undefined || car.licensePlate === null){       
+        return car.drivingLicense = false
+    }else{        
+        return car.drivingLicense = true
+    }
 }
+//console.log('licensePlate' in auto)
+
+solution(auto)
+console.log(auto);
