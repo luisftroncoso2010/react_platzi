@@ -57,3 +57,51 @@ var articulosBaratos = variedad.some(function(articulo){
 })
 
 console.log('   * Articulos Baratos: ', articulosBaratos); 
+
+console.log('--- shif');  // Elimina el primer elemento del array
+
+var frutas = ['Pera', 'Manzana', 'Uvas']
+frutas.shift()
+console.log('   * El array modificado es: ', frutas);
+
+frutas.pop()  // elimina el ultimo elemento del array
+console.log('   * Eliminando un elemento del array:', frutas);  
+
+console.log(' --- Practica de objetos: ');
+
+const cars = [
+    {
+      color: 'red',
+      brand: 'Kia',
+    },
+    {
+      color: 'gray',
+      brand: 'Chevrolet',
+      licensePlate: 'AAA111',
+    },
+    {
+      licensePlate: 'RGB255',
+    },
+  ];
+  
+  function solution(cars) {
+    // 👇 Este es el código que no funciona
+    return cars.filter(function (car) {
+      if (car.licensePlate) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
+console.log(solution(cars));
+
+
+
+//*dcscdscdsc *//
+
+switch (false) { 
+	case false: console.log("Soy falso :( ") 
+	case true: console.log("Soy verdadero!") 
+}
